@@ -1,0 +1,2 @@
+teste :: [String] -> [String]
+teste x = map ( reverse (takeWhile \= " ") reverse) x

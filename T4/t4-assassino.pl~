@@ -64,9 +64,10 @@ relacionamento(alice,pedro).
 ciumes(X,Y):- relacionamento(X,W),relacionamento(Y,W).
 
 arma(X):- quinta(poa,X);quarta(sm,X);quinta(ap,X);quarta(ap,X).
-chaveroubada(X):- segunda(sm,X);terça(poa,X).
+chaveroubada(X):- terça(sm,X);terça(poa,X).
 
 vitima(anita).
+
 
 motivo(X):- ciumes(X,anita); insano(X); pobre(X).
 

@@ -73,7 +73,7 @@ public class AnimatorGUI extends javax.swing.JFrame {
 
         jLabel8.setText("# of objects");
 
-        comboPathImages.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Circle", "Line" }));
+        comboPathImages.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Circle", "Line", "LineAleatoria" }));
         comboPathImages.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboPathImagesActionPerformed(evt);
@@ -114,7 +114,7 @@ public class AnimatorGUI extends javax.swing.JFrame {
             }
         });
 
-        comboPathShapes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Zoom", "Circle", "Line" }));
+        comboPathShapes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Zoom", "Circle", "Line", "LineAleatoria" }));
 
         jLabel9.setText("Shape");
 

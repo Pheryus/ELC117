@@ -11,7 +11,7 @@ import java.awt.Point;
  * @author Pedro
  */
 public class PathCircle{
-    
+    //imagem
     public double movimenta(int direcao, double angle, Point pos, int xinicial, int yinicial, int raio){
                 if (direcao < 2)
                         angle += 0.1;
@@ -24,20 +24,19 @@ public class PathCircle{
                 pos.move(x,y);
                 return angle;
     }
-    //retangulo
-    public double movimenta (double angle, Point inicio, Point fim, int raio){
-                angle += 0.1;
+    //retangulo e circulo
+    public double movimento (int direcao,double angle, Point inicio, int raio){
+                
+                if (direcao < 2)
+                        angle += 0.1;
+                else
+                        angle -= 0.1;
                 int a = (int)(Math.cos(angle)*raio);
                 int b = (int)(Math.sin(angle)*raio);
-                inicio.x += a;
-                fim.x += a;
-                inicio.y += b;
-                fim.y += b;
+                a+= inicio.x;
+                b+= inicio.y;
+                inicio.move(a,b);
                 return angle;
-       
     }
-    
-    
-
     
 }

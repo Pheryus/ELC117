@@ -12,23 +12,34 @@ import java.awt.Point;
  */
 public class PathLine {
             
-        public int reta(int direcao, int velocidade, int distanciareta, int distanciamax, Point pos, int xinicial, int yinicial){
-                if (distanciareta > distanciamax){
-                        pos.move(xinicial,yinicial);
-                        distanciareta = 0;}
+        public void reta(int direcao,  Point pos, int alt, int larg){
+                if (direcao == 1 && pos.y >= alt)
+                        pos.y = 0;
+                if (direcao == 2 && pos.y <= 0)
+                        pos.y = alt;
+                if (direcao == 3 && pos.x >= larg)
+                        pos.x = 0;
+                if (direcao == 0 && pos.x <= 0)
+                        pos.x = larg;
+                        
                 else{  
                         if (direcao == 1)
-                                pos.move(pos.x,pos.y+velocidade);
+                                pos.move(pos.x,pos.y+2);
                         if (direcao == 2)
-                                pos.move(pos.x,pos.y-velocidade);
+                                pos.move(pos.x,pos.y-2);
                         if (direcao == 3)
-                                pos.move(pos.x+velocidade,pos.y);
+                                pos.move(pos.x+2,pos.y);
                         if (direcao == 0)
-                                pos.move(pos.x-velocidade,pos.y);
-                         distanciareta++;
+                                pos.move(pos.x-2,pos.y);
                  }
-                 return distanciareta;
     }
+        public void retanormal (Point pos, int alt, int larg){
+            
+                if (pos.x >= larg)
+                    pos.x = 0;
+                else
+                        pos.move(pos.x+2, pos.y);
+        }
 }
     
 

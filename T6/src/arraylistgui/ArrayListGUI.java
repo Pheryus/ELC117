@@ -47,12 +47,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         SalvarGrupo = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
-        table1 = new javax.swing.JTable();
-        Apagar2 = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        Apagar = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        tablegrupo = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        RemoveGrupo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         NomeJogador = new javax.swing.JTextField();
@@ -122,32 +123,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
             }
         });
 
-        table1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome do Jogador", "Nome do Personagem", "Level", "Classe", "Raça", "Habilidade", "LevelHab", "Especialidade", "Disponível"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane11.setViewportView(table1);
-
-        Apagar2.setText("Apagar Personagem");
-        Apagar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Apagar2ActionPerformed(evt);
-            }
-        });
-
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -165,9 +140,42 @@ public class ArrayListGUI extends javax.swing.JFrame {
             }
         });
         table.getTableHeader().setReorderingAllowed(false);
-        jScrollPane10.setViewportView(table);
+        jScrollPane11.setViewportView(table);
+
+        Apagar.setText("Apagar Personagem");
+        Apagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApagarActionPerformed(evt);
+            }
+        });
+
+        tablegrupo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Jogador", "Nome do Personagem", "Level", "Classe", "Raça", "Habilidade", "LevelHab", "Especialidade", "Disponível"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablegrupo.getTableHeader().setReorderingAllowed(false);
+        jScrollPane10.setViewportView(tablegrupo);
 
         jLabel17.setText("Nome Grupo");
+
+        RemoveGrupo.setText("Remover do Grupo");
+        RemoveGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveGrupoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,16 +183,24 @@ public class ArrayListGUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane10)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(148, 148, 148)
+                        .addComponent(Apagar)
+                        .addGap(185, 185, 185))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(AdicionaGrupo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RemoveGrupo)
+                        .addGap(202, 202, 202))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(401, 401, 401)
                         .addComponent(jLabel19))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(AdicionaGrupo)
-                        .addGap(267, 267, 267)
-                        .addComponent(jLabel18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel17)
@@ -193,11 +209,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SalvarGrupo)))
                 .addContainerGap(406, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(687, Short.MAX_VALUE)
-                    .addComponent(Apagar2)
-                    .addGap(86, 86, 86)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,23 +217,22 @@ public class ArrayListGUI extends javax.swing.JFrame {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AdicionaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SalvarGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdicionaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RemoveGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
+                    .addComponent(jLabel17)
+                    .addComponent(SalvarGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(206, 206, 206)
-                    .addComponent(Apagar2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(244, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Guild", jPanel1);
@@ -633,6 +643,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             //teste se n selecionou nada
+        
             if (!Manhã.isSelected()&&!Manhã1.isSelected()&&!Manhã2.isSelected()&&!Manhã3.isSelected()&&
                     !Manhã4.isSelected()&&!Manhã5.isSelected()&&!Manhã6.isSelected()&&!Tarde.isSelected()&&!Tarde1.isSelected()&&!Tarde2.isSelected()
                     &&!Tarde3.isSelected()&&!Tarde4.isSelected()&&!Tarde5.isSelected()&&!Tarde6.isSelected()&&!Noite.isSelected()&&!Noite1.isSelected()&&!Noite2.isSelected()&&!Noite3.isSelected()&&!Noite4.isSelected()&&!Noite5.isSelected()&&!Noite6.isSelected())
@@ -693,11 +704,11 @@ public class ArrayListGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_NomeJogadorActionPerformed
 
     private void AdicionaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionaGrupoActionPerformed
-        // TODO add your handling code here:
-        c.apagar(table.getSelectedRow());
-        System.out.println("Teste!\n");
-        ((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
-        c.printa();
+        int i = table.getSelectedRow();
+        Personagem p = c.getelemento(i);
+        String trabalho = p.vertrabalho();
+        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});            
     }//GEN-LAST:event_AdicionaGrupoActionPerformed
 
     private void NoiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoiteActionPerformed
@@ -754,11 +765,23 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
     private void SalvarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarGrupoActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_SalvarGrupoActionPerformed
 
-    private void Apagar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apagar2ActionPerformed
+    private void ApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApagarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Apagar2ActionPerformed
+        DefaultTableModel val = (DefaultTableModel)table.getModel();
+        c.apagar(table.getSelectedRow());
+        ((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
+    }//GEN-LAST:event_ApagarActionPerformed
+
+    private void RemoveGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveGrupoActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        c.apagar(tablegrupo.getSelectedRow());
+        ((DefaultTableModel) tablegrupo.getModel()).removeRow(tablegrupo.getSelectedRow());
+    }//GEN-LAST:event_RemoveGrupoActionPerformed
     
     
     /**
@@ -787,7 +810,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdicionaGrupo;
-    private javax.swing.JButton Apagar2;
+    private javax.swing.JButton Apagar;
     private javax.swing.JComboBox Classe;
     private javax.swing.JComboBox Especialidade;
     private javax.swing.JComboBox Habilidade;
@@ -811,6 +834,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JTextField NomeJogador;
     private javax.swing.JTextField NomePersonagem;
     private javax.swing.JComboBox Raça;
+    private javax.swing.JButton RemoveGrupo;
     private javax.swing.JButton Salvar;
     private javax.swing.JButton SalvarGrupo;
     private javax.swing.JCheckBox Tarde;
@@ -846,7 +870,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable table;
-    private javax.swing.JTable table1;
+    private javax.swing.JTable tablegrupo;
     // End of variables declaration//GEN-END:variables
 
 }

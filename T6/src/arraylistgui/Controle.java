@@ -21,10 +21,12 @@ public class Controle {
 
     ArrayListGUI view;
     Guilda guilda;
+    Grupo grupo;
     TableModelPersonagem table;
     public Controle (ArrayListGUI view){
             this.view = view;
             this.guilda = new Guilda();
+            this.grupo = new Grupo();
             this.table = new TableModelPersonagem();
     }
     
@@ -34,8 +36,8 @@ public class Controle {
     public void apagar(int indice){
             guilda.remover(indice);
     }
-   public void printa(){
-            System.out.println("Guilda string:"+guilda.guilda.toString()+"\n");
+   public Personagem getelemento(int i){
+            return guilda.getelemento(i);
    }
     
 }

@@ -11,22 +11,21 @@ import java.util.ArrayList;
  *
  * @author Pedro
  */
-public class Guilda{
-        ArrayList<Personagem> guilda;
-        
-        public Guilda() {
-                    guilda = new ArrayList<Personagem>();
+public class Grupo {
+        ArrayList<Personagem> grupo;
+        public Grupo() {
+                    grupo = new ArrayList<Personagem>();
                 } 
         public void adicionar(Personagem p){
-                    guilda.add(p);
+                    grupo.add(p);
 }
         public void remover (int i){
-                    guilda.remove(i); 
+                    grupo.remove(i); 
         }
         public ArrayList<Personagem> conteudo (){
-                    return this.guilda;
+                    return this.grupo;
         }
         public Personagem getelemento(int i){
-                    return guilda.get(i);
+                    return grupo.get(i);
         }
 }

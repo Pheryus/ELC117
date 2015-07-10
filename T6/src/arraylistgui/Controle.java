@@ -21,15 +21,15 @@ public class Controle {
 
     ArrayListGUI view;
     Guilda guilda;
-    Grupo grupo;
+    ArrayList<Grupo> grupo;
     TableModelPersonagem table;
     public Controle (ArrayListGUI view){
             this.view = view;
             this.guilda = new Guilda();
-            this.grupo = new Grupo();
+            this.grupo = new ArrayList<Grupo>();
             this.table = new TableModelPersonagem();
     }
-    
+        
     public void salvar (Personagem p){ 
             guilda.adicionar(p);
     }
@@ -39,5 +39,6 @@ public class Controle {
    public Personagem getelemento(int i){
             return guilda.getelemento(i);
    }
+    
     
 }

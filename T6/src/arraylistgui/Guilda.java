@@ -29,4 +29,13 @@ public class Guilda{
         public Personagem getelemento(int i){
                     return guilda.get(i);
         }
+        public void printar_guilda(){
+                    System.out.println("Repetição");
+                    for (int i=0; i<guilda.size();i++){
+                            Personagem p = guilda.get(i);
+                            System.out.println(p.toString());
+                                 
+                                    
+                    }
+        }
 }

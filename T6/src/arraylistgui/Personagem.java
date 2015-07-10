@@ -11,10 +11,10 @@ package arraylistgui;
  */
 public class Personagem {
 
+    
     public String getNomep() {
         return nomep;
     }
-
     public String getNomej() {
         return nomej;
     }
@@ -77,7 +77,9 @@ public class Personagem {
     public void setLevelP(int levelp) {
         this.levelp = levelp;
     }
-    
+    public void setTotalTrabalho(boolean[][] i){
+            this.trabalho = i;
+    }
     public void setTrabalho(int i, int j, boolean conteudo){
             trabalho[i][j] = conteudo;
     }
@@ -106,6 +108,7 @@ public class Personagem {
             }
             return aux;
        }
+   
     
     public String nomep,nomej, raça,classe,especialidade,habilidade;
     public int levelh,levelp;

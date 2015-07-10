@@ -21,6 +21,7 @@ public class Controle {
 
     ArrayListGUI view;
     Guilda guilda;
+   
     ArrayList<Grupo> grupo;
     public Controle (ArrayListGUI view){
             this.view = view;

@@ -24,13 +24,14 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
     Controle c;
     Grupo auxiliar;
+    ModeloPersonagem aleatorio;
     /** Creates new form ArrayListGUI */
     public ArrayListGUI() {
         initComponents();
         //tableModelPersonagem = new TableModelPersonagem();
         c = new Controle(this);
         auxiliar = new Grupo();
-        
+        aleatorio = new ModeloPersonagem();
     }
 
     
@@ -114,29 +115,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         abregrupo = new javax.swing.JButton();
         DiaGrupo = new javax.swing.JComboBox();
         AtualizarPersonagem = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        tablegrupopronto1 = new javax.swing.JTable();
-        jLabel20 = new javax.swing.JLabel();
-        jNomeEvento = new javax.swing.JTextField();
-        ComeçoEvento = new javax.swing.JComboBox();
-        FimEvento = new javax.swing.JComboBox();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        tablegrupopronto2 = new javax.swing.JTable();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        ComeçoEvento1 = new javax.swing.JComboBox();
-        nDefensor = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        ComeçoEvento2 = new javax.swing.JComboBox();
-        nAgressor = new javax.swing.JTextField();
-        ComeçoEvento3 = new javax.swing.JComboBox();
-        ComeçoEvento4 = new javax.swing.JComboBox();
-        nControlador = new javax.swing.JTextField();
-        nLíder = new javax.swing.JTextField();
+        jaleatorio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -667,24 +646,22 @@ public class ArrayListGUI extends javax.swing.JFrame {
             }
         });
 
+        jaleatorio.setText("Adicionar Aleatório");
+        jaleatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jaleatorioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane10)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(401, 401, 401)
                 .addComponent(jLabel19)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AtualizarPersonagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Apagar)
-                .addGap(102, 102, 102))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -709,6 +686,17 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(excluigrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jaleatorio)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AtualizarPersonagem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Apagar)
+                .addGap(102, 102, 102))
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(301, 301, 301)
@@ -727,7 +715,8 @@ public class ArrayListGUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(AtualizarPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jaleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -757,201 +746,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Guild", jPanel1);
 
-        tablegrupopronto1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome do Grupo", "Tamanho"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablegrupopronto1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane13.setViewportView(tablegrupopronto1);
-
-        jLabel20.setText("Nome do Evento");
-
-        ComeçoEvento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Segunda Manhã", "Segunda Tarde", "Segunda Noite", "Terça Manhã", "Terça Tarde", "Terça Noite", "Quarta Manhã", "Quarta Tarde", "Quarta Noite", "Quinta Manhã", "Quinta Tarde", "Quinta Noite", "Sexta Manhã", "Sexta Tarde", "Sexta Noite", "Sábado Manhã", "Sábado Tarde", "Sábado Noite", "Domingo Manhã", "Domingo Tarde", "Domingo Noite" }));
-        ComeçoEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComeçoEventoActionPerformed(evt);
-            }
-        });
-
-        FimEvento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Segunda Manhã", "Segunda Tarde", "Segunda Noite", "Terça Manhã", "Terça Tarde", "Terça Noite", "Quarta Manhã", "Quarta Tarde", "Quarta Noite", "Quinta Manhã", "Quinta Tarde", "Quinta Noite", "Sexta Manhã", "Sexta Tarde", "Sexta Noite", "Sábado Manhã", "Sábado Tarde", "Sábado Noite", "Domingo Manhã", "Domingo Tarde", "Domingo Noite" }));
-        FimEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FimEventoActionPerformed(evt);
-            }
-        });
-
-        jLabel21.setText("Começo");
-
-        jLabel22.setText("Término");
-
-        tablegrupopronto2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome do Grupo", "Tamanho"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablegrupopronto2.getTableHeader().setReorderingAllowed(false);
-        jScrollPane14.setViewportView(tablegrupopronto2);
-
-        jLabel23.setText("Grupos");
-
-        jLabel24.setText("Eventos");
-
-        jLabel25.setText("-Pré-Requisitos-");
-
-        ComeçoEvento1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Defensor" }));
-        ComeçoEvento1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComeçoEvento1ActionPerformed(evt);
-            }
-        });
-
-        jLabel26.setText("      Número");
-
-        ComeçoEvento2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Agressor" }));
-        ComeçoEvento2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComeçoEvento2ActionPerformed(evt);
-            }
-        });
-
-        ComeçoEvento3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Controlador" }));
-        ComeçoEvento3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComeçoEvento3ActionPerformed(evt);
-            }
-        });
-
-        ComeçoEvento4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Líder" }));
-        ComeçoEvento4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComeçoEvento4ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(324, 324, 324)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jNomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FimEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComeçoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(74, 74, 74)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(ComeçoEvento1, 0, 82, Short.MAX_VALUE)
-                                        .addComponent(ComeçoEvento2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(ComeçoEvento4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ComeçoEvento3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nControlador, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nAgressor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nDefensor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel26)
-                                    .addComponent(nLíder, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabel23))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabel24)))
-                .addContainerGap(152, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(49, 49, 49)
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(610, Short.MAX_VALUE)))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jNomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComeçoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21)
-                    .addComponent(ComeçoEvento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nDefensor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FimEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22)
-                    .addComponent(ComeçoEvento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nAgressor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComeçoEvento3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nControlador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComeçoEvento4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nLíder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(35, 35, 35)
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(342, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane2.addTab("Eventos", jPanel3);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -968,362 +762,39 @@ public class ArrayListGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NomePersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomePersonagemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomePersonagemActionPerformed
-
-    private void EspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspecialidadeActionPerformed
-        // TODO add your handling code here:     
-    }//GEN-LAST:event_EspecialidadeActionPerformed
-
-    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
+    private void jaleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jaleatorioActionPerformed
         // TODO add your handling code here:
         try {
-            Personagem p = copiadeelementos();
+            Personagem p = new Personagem();
+            p.setNomej(aleatorio.jogadoraleatorio());
+            p.setNomep(aleatorio.personagemaleatorio());
+            p.setClasse(aleatorio.classealeatorio());
+            p.setRaça(aleatorio.raçaaleatorio());
+            p.setEspecialidade(aleatorio.especialidadealeatorio());
+            p.setHabilidade(aleatorio.habilidadealeatorio());
+            p.setTotalTrabalho(aleatorio.trabalhoaleatorio());
+            p.setLevelH(aleatorio.levelaleatorio());
+            p.setLevelP(aleatorio.levelaleatorio());
+
             if (p == null)
-                    return;
+                return;
+            if (p.trabalho==null)
+                return;
             String trabalho = p.vertrabalho();
             DefaultTableModel val = (DefaultTableModel)table.getModel();
             val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
-            limpar();
             c.salvar(p);
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Dado(s) de entrada invalido(s)!");
         }
-    }//GEN-LAST:event_SalvarActionPerformed
-
-    private void LevelHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LevelHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LevelHActionPerformed
-
-    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
-        // TODO add your handling code here:
-        //limparPersonagem();
-        limpar();
-    }//GEN-LAST:event_LimparActionPerformed
-
-    private void NomeJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeJogadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomeJogadorActionPerformed
-
-    private void AdicionaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionaGrupoActionPerformed
-        int i = table.getSelectedRow();
-        if (i== -1)
-                return;
-        Personagem p = c.getelemento(i);
-        auxiliar.adicionar(p);
-        String trabalho = p.vertrabalho();
-        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
-        val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});            
-    }//GEN-LAST:event_AdicionaGrupoActionPerformed
-
-    private void NoiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoiteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NoiteActionPerformed
-
-    private void Noite1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Noite1ActionPerformed
-
-    private void Manhã1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Manhã1ActionPerformed
-
-    private void Manhã2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Manhã2ActionPerformed
-
-    private void Manhã3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Manhã3ActionPerformed
-
-    private void Manhã4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Manhã4ActionPerformed
-
-    private void Manhã5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Manhã5ActionPerformed
-
-    private void Manhã6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Manhã6ActionPerformed
-
-    private void Noite2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Noite2ActionPerformed
-
-    private void Noite3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Noite3ActionPerformed
-
-    private void Noite4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Noite4ActionPerformed
-
-    private void Noite5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Noite5ActionPerformed
-
-    private void Noite6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Noite6ActionPerformed
-
-    private void SalvarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarGrupoActionPerformed
-        // TODO add your handling code here:
-        int tam = tablegrupo.getRowCount();
-        int dia = 0,periodo = 0;
-        String palavra;
-        Grupo aux = new Grupo();
-        int j;
-        boolean teste = true;
-        if (tam == 0)
-                JOptionPane.showMessageDialog(null, "Grupo vazio!","Erro",JOptionPane.WARNING_MESSAGE);
-        else if (tam == 5 || tam == 10 || tam == 25){
-                if ((nomegrupo.getText().isEmpty()))
-                        JOptionPane.showMessageDialog(null, "Nome inválido","Erro",JOptionPane.WARNING_MESSAGE);
-                else{
-                        if (DiaGrupo.getSelectedItem()=="Segunda Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[0][0];
-                               dia=0;
-                               periodo=0;
-                        }
-                         if (DiaGrupo.getSelectedItem()=="Segunda Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[0][1];
-                               dia=0;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Segunda Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[0][2];
-                               dia=0;
-                               periodo=2;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Terça Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[1][0];
-                               dia=1;
-                               periodo=0;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Terça Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[1][1];
-                               dia=1;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Terça Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[1][2];
-                               dia=1;
-                               periodo=2;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Quarta Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[2][0];
-                               dia=2;
-                               periodo=0;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Quarta Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[2][1];
-                               dia=2;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Quarta Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[2][2];
-                               dia=2;
-                               periodo=2;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Quinta Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[3][0];
-                               dia=3;
-                               periodo=0;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Quinta Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[3][1];
-                               dia=3;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Quinta Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[3][2];
-                               dia=3;
-                               periodo=2;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Sexta Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[4][0];
-                               dia=4;
-                               periodo=0;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Sexta Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[4][1];
-                               dia=4;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Sexta Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[4][2];
-                               dia=4;
-                               periodo=2;
-                         }  
-                         if (DiaGrupo.getSelectedItem()=="Sábado Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[5][0];
-                               dia=5;
-                               periodo=0;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Sábado Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[5][1];
-                               dia=5;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Sábado Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[5][2];
-                               dia=5;
-                               periodo=2;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Domingo Manhã"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[6][0];
-                               dia=6;
-                               periodo=0;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Domingo Tarde"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[6][1];
-                               dia=6;
-                               periodo=1;
-                         }
-                         if (DiaGrupo.getSelectedItem()=="Domingo Noite"){
-                               for (int i=0; i<tam;i++)
-                                        teste = teste && auxiliar.grupo.get(i).trabalho[6][2];  
-                               dia=6;
-                               periodo=2;
-                         }
-                         if (!teste){
-                                        JOptionPane.showMessageDialog(null, "Nem todas personagens podem nesse dia!","Erro",JOptionPane.WARNING_MESSAGE);   
-                                        return;
-                         }
-                         DefaultTableModel mod = (DefaultTableModel)table.getModel();
-                         for (int i=0; i<tam;i++){
-                             j = c.guilda.guilda.indexOf(auxiliar.grupo.get(i));
-                             c.atualizapersonagem(dia, periodo, j);
-                             Personagem p = c.guilda.getelemento(j);
-                             mod.removeRow(j);
-                             mod.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,p.vertrabalho()});
-                         }
-
-                        for (int i=0; i<tam;i++)
-                                aux.adicionar(auxiliar.getelemento(i));
-                        palavra = nomegrupo.getText();
-                        DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
-                        val.addRow(new String[]{palavra,Integer.toString(tam)});            
-                        c.grupo.add(aux);
-                        auxiliar.deletar();
-                        DefaultTableModel val2 = (DefaultTableModel)tablegrupo.getModel();
-                        val2.setRowCount(0);
-                }   
-        }
-        else
-                JOptionPane.showMessageDialog(null, "Número de pessoas inválido (5, 10 ou 25)","Erro",JOptionPane.WARNING_MESSAGE);   
-    }//GEN-LAST:event_SalvarGrupoActionPerformed
-
-    private void ApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApagarActionPerformed
-        // TODO add your handling code here:
-        //DefaultTableModel val = (DefaultTableModel)table.getModel();
-        if (table.getSelectedRow() == -1)
-                return;
-        c.apagar(table.getSelectedRow());
-        //auxiliar.remover(table.getSelectedRow());
-        ((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
-    }//GEN-LAST:event_ApagarActionPerformed
-
-    private void RemovedoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovedoGrupoActionPerformed
-        // TODO add your handling code here:
-        //DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
-        int i = tablegrupo.getSelectedRow();
-        if (i == -1)
-                return;
-        ((DefaultTableModel) tablegrupo.getModel()).removeRow(i);
-    }//GEN-LAST:event_RemovedoGrupoActionPerformed
-
-    private void limpagrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpagrupoActionPerformed
-        // TODO add your handling code here:
-        //DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
-        int j = tablegrupo.getRowCount();
-        if (j == -1)
-                return;
-        for (int i=0;i<j;i++){
-                ((DefaultTableModel)tablegrupo.getModel()).removeRow(0); 
-                auxiliar.remover(0);
-        }
-    }//GEN-LAST:event_limpagrupoActionPerformed
-
-    private void excluigrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluigrupoActionPerformed
-        // TODO add your handling code here:
-        //DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
-        //c.grupo.get(tablegrupopronto.getSelectedRow()).deletar();
-        int i = tablegrupopronto.getSelectedRow();
-        if (i == -1)
-                return;
-        c.grupo.remove(i);
-        ((DefaultTableModel) tablegrupopronto.getModel()).removeRow(i);
-        
-    }//GEN-LAST:event_excluigrupoActionPerformed
-
-    private void abregrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abregrupoActionPerformed
-        // TODO add your handling code here:
-        Personagem p;
-        int i = tablegrupopronto.getSelectedRow();
-        if (i == -1)
-                return;
-         DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
-        for (int j=0; j<c.grupo.get(i).grupo.size();j++){
-                    p = c.grupo.get(i).getelemento(j);
-                    String trabalho = p.vertrabalho();
-                    val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});                       
-                    auxiliar.adicionar(p);
-        } 
-    }//GEN-LAST:event_abregrupoActionPerformed
-
-    private void TodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosActionPerformed
-        // TODO add your handling code here:
-            if (Todos.isSelected()){
-                    Manhã.setSelected(true);Manhã1.setSelected(true);Manhã2.setSelected(true);
-                    Manhã3.setSelected(true);Manhã4.setSelected(true);Manhã5.setSelected(true);Manhã6.setSelected(true);
-                    Tarde.setSelected(true);Tarde1.setSelected(true);Tarde2.setSelected(true);
-                    Tarde3.setSelected(true);Tarde4.setSelected(true);Tarde5.setSelected(true);Tarde6.setSelected(true);
-                    Noite.setSelected(true);Noite1.setSelected(true);Noite2.setSelected(true);
-                    Noite3.setSelected(true);Noite4.setSelected(true);Noite5.setSelected(true);Noite6.setSelected(true);}
-            else{
-                    Manhã.setSelected(false);Manhã1.setSelected(false);Manhã2.setSelected(false);
-                    Manhã3.setSelected(false);Manhã4.setSelected(false);Manhã5.setSelected(false);Manhã6.setSelected(false);
-                    Tarde.setSelected(false);Tarde1.setSelected(false);Tarde2.setSelected(false);
-                    Tarde3.setSelected(false);Tarde4.setSelected(false);Tarde5.setSelected(false);Tarde6.setSelected(false);
-                    Noite.setSelected(false);Noite1.setSelected(false);Noite2.setSelected(false);
-                    Noite3.setSelected(false);Noite4.setSelected(false);Noite5.setSelected(false);Noite6.setSelected(false);
-            }
-    }//GEN-LAST:event_TodosActionPerformed
-
-    private void DiaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaGrupoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DiaGrupoActionPerformed
+    }//GEN-LAST:event_jaleatorioActionPerformed
 
     private void AtualizarPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarPersonagemActionPerformed
         // TODO add your handling code here:
         int i = table.getSelectedRow();
         if (i == -1)
-                return;
+        return;
         Personagem p = c.guilda.getelemento(i);
         NomeJogador.setText(p.nomej);
         NomePersonagem.setText(p.nomep);
@@ -1356,9 +827,252 @@ public class ArrayListGUI extends javax.swing.JFrame {
         if (p.trabalho[6][2])   Noite6.setSelected(true);
     }//GEN-LAST:event_AtualizarPersonagemActionPerformed
 
+    private void DiaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaGrupoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiaGrupoActionPerformed
+
+    private void abregrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abregrupoActionPerformed
+        // TODO add your handling code here:
+        Personagem p;
+        int i = tablegrupopronto.getSelectedRow();
+        if (i == -1)
+        return;
+        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        for (int j=0; j<c.grupo.get(i).grupo.size();j++){
+            p = c.grupo.get(i).getelemento(j);
+            String trabalho = p.vertrabalho();
+            val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
+            auxiliar.adicionar(p);
+        }
+    }//GEN-LAST:event_abregrupoActionPerformed
+
+    private void excluigrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluigrupoActionPerformed
+        // TODO add your handling code here:
+        //DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
+        //c.grupo.get(tablegrupopronto.getSelectedRow()).deletar();
+        int i = tablegrupopronto.getSelectedRow();
+        if (i == -1)
+        return;
+        c.grupo.remove(i);
+        ((DefaultTableModel) tablegrupopronto.getModel()).removeRow(i);
+
+    }//GEN-LAST:event_excluigrupoActionPerformed
+
+    private void limpagrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpagrupoActionPerformed
+        // TODO add your handling code here:
+        //DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        int j = tablegrupo.getRowCount();
+        if (j == -1)
+        return;
+        for (int i=0;i<j;i++){
+            ((DefaultTableModel)tablegrupo.getModel()).removeRow(0);
+            auxiliar.remover(0);
+        }
+    }//GEN-LAST:event_limpagrupoActionPerformed
+
+    private void RemovedoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovedoGrupoActionPerformed
+        // TODO add your handling code here:
+        //DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        int i = tablegrupo.getSelectedRow();
+        if (i == -1)
+        return;
+        ((DefaultTableModel) tablegrupo.getModel()).removeRow(i);
+    }//GEN-LAST:event_RemovedoGrupoActionPerformed
+
+    private void ApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApagarActionPerformed
+        // TODO add your handling code here:
+        //DefaultTableModel val = (DefaultTableModel)table.getModel();
+        if (table.getSelectedRow() == -1)
+        return;
+        c.apagar(table.getSelectedRow());
+        //auxiliar.remover(table.getSelectedRow());
+        ((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
+    }//GEN-LAST:event_ApagarActionPerformed
+
+    private void SalvarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarGrupoActionPerformed
+        // TODO add your handling code here:
+        int tam = tablegrupo.getRowCount();
+        int dia = 0,periodo = 0;
+        String palavra;
+        Grupo aux = new Grupo();
+        int j;
+        boolean teste = true;
+        if (tam == 0)
+        JOptionPane.showMessageDialog(null, "Grupo vazio!","Erro",JOptionPane.WARNING_MESSAGE);
+        else if (tam == 5 || tam == 10 || tam == 25){
+            if ((nomegrupo.getText().isEmpty()))
+            JOptionPane.showMessageDialog(null, "Nome inválido","Erro",JOptionPane.WARNING_MESSAGE);
+            else{
+                if (DiaGrupo.getSelectedItem()=="Segunda Manhã"){
+                    for (int i=0; i<tam;i++){
+                        teste = teste && auxiliar.grupo.get(i).trabalho[0][0];
+                    }
+                    dia=0;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Segunda Tarde"){
+                    for (int i=0; i<tam;i++)
+                        teste = teste && auxiliar.grupo.get(i).trabalho[0][1];
+                    dia=0;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Segunda Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[0][2];
+                    dia=0;
+                    periodo=2;
+                }
+                if (DiaGrupo.getSelectedItem()=="Terça Manhã"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[1][0];
+                    dia=1;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Terça Tarde"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[1][1];
+                    dia=1;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Terça Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[1][2];
+                    dia=1;
+                    periodo=2;
+                }
+                if (DiaGrupo.getSelectedItem()=="Quarta Manhã"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[2][0];
+                    dia=2;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Quarta Tarde"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[2][1];
+                    dia=2;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Quarta Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[2][2];
+                    dia=2;
+                    periodo=2;
+                }
+                if (DiaGrupo.getSelectedItem()=="Quinta Manhã"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[3][0];
+                    dia=3;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Quinta Tarde"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[3][1];
+                    dia=3;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Quinta Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[3][2];
+                    dia=3;
+                    periodo=2;
+                }
+                if (DiaGrupo.getSelectedItem()=="Sexta Manhã"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[4][0];
+                    dia=4;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Sexta Tarde"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[4][1];
+                    dia=4;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Sexta Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[4][2];
+                    dia=4;
+                    periodo=2;
+                }
+                if (DiaGrupo.getSelectedItem()=="Sábado Manhã"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[5][0];
+                    dia=5;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Sábado Tarde"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[5][1];
+                    dia=5;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Sábado Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[5][2];
+                    dia=5;
+                    periodo=2;
+                }
+                if (DiaGrupo.getSelectedItem()=="Domingo Manhã"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[6][0];
+                    dia=6;
+                    periodo=0;
+                }
+                if (DiaGrupo.getSelectedItem()=="Domingo Tarde"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[6][1];
+                    dia=6;
+                    periodo=1;
+                }
+                if (DiaGrupo.getSelectedItem()=="Domingo Noite"){
+                    for (int i=0; i<tam;i++)
+                    teste = teste && auxiliar.grupo.get(i).trabalho[6][2];
+                    dia=6;
+                    periodo=2;
+                }
+                if (!teste){
+                    JOptionPane.showMessageDialog(null, "Nem todas personagens podem nesse dia!","Erro",JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                DefaultTableModel mod = (DefaultTableModel)table.getModel();
+                for (int i=0; i<tam;i++){
+                    j = c.guilda.guilda.indexOf(auxiliar.grupo.get(i));
+                    c.atualizapersonagem(dia, periodo, j);
+                    Personagem p = c.guilda.getelemento(j);
+                    mod.removeRow(j);
+                    mod.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,p.vertrabalho()});
+                }
+
+                for (int i=0; i<tam;i++)
+                aux.adicionar(auxiliar.getelemento(i));
+                palavra = nomegrupo.getText();
+                DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
+                val.addRow(new String[]{palavra,Integer.toString(tam)});
+                nomegrupo.setText("");
+                c.grupo.add(aux);
+                auxiliar.deletar();
+                DefaultTableModel val2 = (DefaultTableModel)tablegrupo.getModel();
+                val2.setRowCount(0);
+            }
+        }
+        else
+        JOptionPane.showMessageDialog(null, "Número de pessoas inválido (5, 10 ou 25)","Erro",JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_SalvarGrupoActionPerformed
+
+    private void AdicionaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionaGrupoActionPerformed
+        int i = table.getSelectedRow();
+        if (i== -1)
+        return;
+        Personagem p = c.getelemento(i);
+        auxiliar.adicionar(p);
+        String trabalho = p.vertrabalho();
+        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
+    }//GEN-LAST:event_AdicionaGrupoActionPerformed
+
     private void EditarPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPersonagemActionPerformed
         // TODO add your handling code here:
-          try {
+        try {
             //teste se n selecionou nada
             Personagem p = copiadeelementos();
             if (p == null)
@@ -1369,36 +1083,123 @@ public class ArrayListGUI extends javax.swing.JFrame {
             c.trocar(i, p);
             DefaultTableModel val = (DefaultTableModel)table.getModel();
             val.removeRow(i);
-            val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
+            //val.insertRow(i, rowData);
+            val.insertRow(i,new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Não conseguiu editar!");
         }
     }//GEN-LAST:event_EditarPersonagemActionPerformed
 
-    private void ComeçoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEventoActionPerformed
+    private void TodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComeçoEventoActionPerformed
+        if (Todos.isSelected()){
+            Manhã.setSelected(true);Manhã1.setSelected(true);Manhã2.setSelected(true);
+            Manhã3.setSelected(true);Manhã4.setSelected(true);Manhã5.setSelected(true);Manhã6.setSelected(true);
+            Tarde.setSelected(true);Tarde1.setSelected(true);Tarde2.setSelected(true);
+            Tarde3.setSelected(true);Tarde4.setSelected(true);Tarde5.setSelected(true);Tarde6.setSelected(true);
+            Noite.setSelected(true);Noite1.setSelected(true);Noite2.setSelected(true);
+            Noite3.setSelected(true);Noite4.setSelected(true);Noite5.setSelected(true);Noite6.setSelected(true);}
+        else{
+            Manhã.setSelected(false);Manhã1.setSelected(false);Manhã2.setSelected(false);
+            Manhã3.setSelected(false);Manhã4.setSelected(false);Manhã5.setSelected(false);Manhã6.setSelected(false);
+            Tarde.setSelected(false);Tarde1.setSelected(false);Tarde2.setSelected(false);
+            Tarde3.setSelected(false);Tarde4.setSelected(false);Tarde5.setSelected(false);Tarde6.setSelected(false);
+            Noite.setSelected(false);Noite1.setSelected(false);Noite2.setSelected(false);
+            Noite3.setSelected(false);Noite4.setSelected(false);Noite5.setSelected(false);Noite6.setSelected(false);
+        }
+    }//GEN-LAST:event_TodosActionPerformed
 
-    private void FimEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FimEventoActionPerformed
+    private void Noite6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FimEventoActionPerformed
+    }//GEN-LAST:event_Noite6ActionPerformed
 
-    private void ComeçoEvento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento1ActionPerformed
+    private void Noite5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComeçoEvento1ActionPerformed
+    }//GEN-LAST:event_Noite5ActionPerformed
 
-    private void ComeçoEvento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento2ActionPerformed
+    private void Noite4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComeçoEvento2ActionPerformed
+    }//GEN-LAST:event_Noite4ActionPerformed
 
-    private void ComeçoEvento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento3ActionPerformed
+    private void Noite3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComeçoEvento3ActionPerformed
+    }//GEN-LAST:event_Noite3ActionPerformed
 
-    private void ComeçoEvento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento4ActionPerformed
+    private void Noite2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComeçoEvento4ActionPerformed
+    }//GEN-LAST:event_Noite2ActionPerformed
+
+    private void Manhã6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Manhã6ActionPerformed
+
+    private void Manhã5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Manhã5ActionPerformed
+
+    private void Manhã4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Manhã4ActionPerformed
+
+    private void Manhã3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Manhã3ActionPerformed
+
+    private void Manhã2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Manhã2ActionPerformed
+
+    private void Manhã1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manhã1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Manhã1ActionPerformed
+
+    private void Noite1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Noite1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Noite1ActionPerformed
+
+    private void NoiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoiteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoiteActionPerformed
+
+    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
+        // TODO add your handling code here:
+        //limparPersonagem();
+        limpar();
+    }//GEN-LAST:event_LimparActionPerformed
+
+    private void LevelHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LevelHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LevelHActionPerformed
+
+    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
+        // TODO add your handling code here:
+        try {
+            Personagem p = copiadeelementos();
+            if (p == null)
+            return;
+            String trabalho = p.vertrabalho();
+            DefaultTableModel val = (DefaultTableModel)table.getModel();
+            val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
+            limpar();
+            c.salvar(p);
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Dado(s) de entrada invalido(s)!");
+        }
+    }//GEN-LAST:event_SalvarActionPerformed
+
+    private void EspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspecialidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EspecialidadeActionPerformed
+
+    private void NomePersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomePersonagemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomePersonagemActionPerformed
+
+    private void NomeJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeJogadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomeJogadorActionPerformed
     
     
     /**
@@ -1474,15 +1275,9 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JButton Apagar;
     private javax.swing.JButton AtualizarPersonagem;
     private javax.swing.JComboBox Classe;
-    private javax.swing.JComboBox ComeçoEvento;
-    private javax.swing.JComboBox ComeçoEvento1;
-    private javax.swing.JComboBox ComeçoEvento2;
-    private javax.swing.JComboBox ComeçoEvento3;
-    private javax.swing.JComboBox ComeçoEvento4;
     private javax.swing.JComboBox DiaGrupo;
     private javax.swing.JButton EditarPersonagem;
     private javax.swing.JComboBox Especialidade;
-    private javax.swing.JComboBox FimEvento;
     private javax.swing.JComboBox Habilidade;
     private javax.swing.JFormattedTextField LevelH;
     private javax.swing.JFormattedTextField LevelP;
@@ -1529,13 +1324,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1543,27 +1331,18 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jNomeEvento;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JButton jaleatorio;
     private javax.swing.JButton limpagrupo;
-    private javax.swing.JTextField nAgressor;
-    private javax.swing.JTextField nControlador;
-    private javax.swing.JTextField nDefensor;
-    private javax.swing.JTextField nLíder;
     private javax.swing.JTextField nomegrupo;
     private javax.swing.JTable table;
     private javax.swing.JTable tablegrupo;
     private javax.swing.JTable tablegrupopronto;
-    private javax.swing.JTable tablegrupopronto1;
-    private javax.swing.JTable tablegrupopronto2;
     // End of variables declaration//GEN-END:variables
 
 }

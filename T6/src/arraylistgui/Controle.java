@@ -39,6 +39,9 @@ public class Controle {
    public Personagem getelemento(int i){
             return guilda.getelemento(i);
    }
-    
+   public void printar (int i){
+            System.out.println("Lista de elementos no grupo!!!\n");
+            grupo.get(i).printar_guilda();
+   }
     
 }

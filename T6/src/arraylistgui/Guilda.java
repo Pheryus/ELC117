@@ -30,12 +30,9 @@ public class Guilda{
                     return guilda.get(i);
         }
         public void printar_guilda(){
-                    System.out.println("Repetição");
                     for (int i=0; i<guilda.size();i++){
                             Personagem p = guilda.get(i);
-                            System.out.println(p.toString());
-                                 
-                                    
+                            System.out.println(p.toString());                                    
                     }
         }
 }

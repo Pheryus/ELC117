@@ -56,12 +56,12 @@ public class ArrayListGUI extends javax.swing.JFrame {
         tablegrupo = new javax.swing.JTable();
         nomegrupo = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        RemoveGrupo = new javax.swing.JButton();
+        RemovedoGrupo = new javax.swing.JButton();
         limpagrupo = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         tablegrupopronto = new javax.swing.JTable();
+        excluegrupo = new javax.swing.JButton();
         abregrupo = new javax.swing.JButton();
-        abregrupo1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         NomeJogador = new javax.swing.JTextField();
@@ -110,6 +110,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         Noite4 = new javax.swing.JCheckBox();
         Noite5 = new javax.swing.JCheckBox();
         Noite6 = new javax.swing.JCheckBox();
+        Todos = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,10 +188,10 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         jLabel17.setText("Nome Grupo");
 
-        RemoveGrupo.setText("Remover do Grupo");
-        RemoveGrupo.addActionListener(new java.awt.event.ActionListener() {
+        RemovedoGrupo.setText("Remover do Grupo");
+        RemovedoGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemoveGrupoActionPerformed(evt);
+                RemovedoGrupoActionPerformed(evt);
             }
         });
 
@@ -220,17 +221,17 @@ public class ArrayListGUI extends javax.swing.JFrame {
         tablegrupopronto.getTableHeader().setReorderingAllowed(false);
         jScrollPane12.setViewportView(tablegrupopronto);
 
-        abregrupo.setText("Excluir Grupo");
-        abregrupo.addActionListener(new java.awt.event.ActionListener() {
+        excluegrupo.setText("Excluir Grupo");
+        excluegrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abregrupoActionPerformed(evt);
+                excluegrupoActionPerformed(evt);
             }
         });
 
-        abregrupo1.setText("Abrir Grupo");
-        abregrupo1.addActionListener(new java.awt.event.ActionListener() {
+        abregrupo.setText("Abrir Grupo");
+        abregrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abregrupo1ActionPerformed(evt);
+                abregrupoActionPerformed(evt);
             }
         });
 
@@ -264,18 +265,18 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                         .addComponent(AdicionaGrupo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RemoveGrupo)
+                        .addComponent(RemovedoGrupo)
                         .addGap(176, 176, 176))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(excluegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(301, 301, 301)
-                    .addComponent(abregrupo1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(445, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -296,7 +297,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AdicionaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RemoveGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RemovedoGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SalvarGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nomegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17)
@@ -306,12 +307,12 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addContainerGap(56, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(excluegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(68, 68, 68))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(458, Short.MAX_VALUE)
-                    .addComponent(abregrupo1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(112, 112, 112)))
         );
 
@@ -506,6 +507,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
             }
         });
 
+        Todos.setText("Todos");
+        Todos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TodosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -588,17 +596,22 @@ public class ArrayListGUI extends javax.swing.JFrame {
                             .addComponent(Noite5)
                             .addComponent(Noite6)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Noite1)
-                                    .addComponent(Noite2))
-                                .addGap(77, 77, 77)
-                                .addComponent(Salvar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(Noite1)
+                                        .addGap(214, 214, 214))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(Noite2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Salvar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addComponent(Limpar))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(284, 284, 284)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 295, Short.MAX_VALUE))
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Todos)))
+                .addGap(0, 231, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -633,34 +646,34 @@ public class ArrayListGUI extends javax.swing.JFrame {
                     .addComponent(LevelH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Especialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Especialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(Todos)))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(Noite)
                     .addComponent(Tarde, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Manhã))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Manhã1)
-                            .addComponent(Noite1)
-                            .addComponent(Tarde1)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(Manhã2)
-                            .addComponent(Tarde2)
-                            .addComponent(Noite2)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Salvar)
-                            .addComponent(Limpar))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Manhã1)
+                    .addComponent(Noite1)
+                    .addComponent(Tarde1)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(Manhã2)
+                    .addComponent(Tarde2)
+                    .addComponent(Noite2)
+                    .addComponent(Limpar)
+                    .addComponent(Salvar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Manhã3)
@@ -685,7 +698,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
                     .addComponent(Tarde6)
                     .addComponent(Noite6)
                     .addComponent(jLabel16))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Personagem", jPanel2);
@@ -858,6 +871,9 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
                         val.addRow(new String[]{palavra,Integer.toString(tam)});            
                         c.grupo.add(aux);
+                        auxiliar.deletar();
+                        DefaultTableModel val2 = (DefaultTableModel)tablegrupo.getModel();
+                        val2.setRowCount(0);
                 }   
         }
         else
@@ -866,35 +882,80 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
     private void ApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApagarActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel val = (DefaultTableModel)table.getModel();
+        //DefaultTableModel val = (DefaultTableModel)table.getModel();
+        if (table.getSelectedRow() == -1)
+                return;
         c.apagar(table.getSelectedRow());
         auxiliar.remover(table.getSelectedRow());
         ((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
     }//GEN-LAST:event_ApagarActionPerformed
 
-    private void RemoveGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveGrupoActionPerformed
+    private void RemovedoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovedoGrupoActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
-        ((DefaultTableModel) tablegrupo.getModel()).removeRow(tablegrupo.getSelectedRow());
-    }//GEN-LAST:event_RemoveGrupoActionPerformed
+        //DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        int i = tablegrupo.getSelectedRow();
+        if (i == -1)
+                return;
+        ((DefaultTableModel) tablegrupo.getModel()).removeRow(i);
+    }//GEN-LAST:event_RemovedoGrupoActionPerformed
 
     private void limpagrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpagrupoActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        //DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
         int j = tablegrupo.getRowCount();
+        if (j == -1)
+                return;
         for (int i=0;i<j;i++){
-                ((DefaultTableModel)tablegrupo.getModel()).removeRow(0);  
+                ((DefaultTableModel)tablegrupo.getModel()).removeRow(0); 
                 auxiliar.remover(0);
         }
     }//GEN-LAST:event_limpagrupoActionPerformed
 
+    private void excluegrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluegrupoActionPerformed
+        // TODO add your handling code here:
+        //DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
+        //c.grupo.get(tablegrupopronto.getSelectedRow()).deletar();
+        int i = tablegrupopronto.getSelectedRow();
+        if (i == -1)
+                return;
+        c.grupo.remove(i);
+        ((DefaultTableModel) tablegrupopronto.getModel()).removeRow(i);
+        
+    }//GEN-LAST:event_excluegrupoActionPerformed
+
     private void abregrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abregrupoActionPerformed
         // TODO add your handling code here:
+        Personagem p;
+        int i = tablegrupopronto.getSelectedRow();
+        if (i == -1)
+                return;
+         DefaultTableModel val = (DefaultTableModel)tablegrupo.getModel();
+        for (int j=0; j<c.grupo.get(i).grupo.size();j++){
+                    p = c.grupo.get(i).getelemento(j);
+                    String trabalho = p.vertrabalho();
+                    val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});                       
+                    auxiliar.adicionar(p);
+        } 
     }//GEN-LAST:event_abregrupoActionPerformed
 
-    private void abregrupo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abregrupo1ActionPerformed
+    private void TodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_abregrupo1ActionPerformed
+            if (Todos.isSelected()){
+                    Manhã.setSelected(true);Manhã1.setSelected(true);Manhã2.setSelected(true);
+                    Manhã3.setSelected(true);Manhã4.setSelected(true);Manhã5.setSelected(true);Manhã6.setSelected(true);
+                    Tarde.setSelected(true);Tarde1.setSelected(true);Tarde2.setSelected(true);
+                    Tarde3.setSelected(true);Tarde4.setSelected(true);Tarde5.setSelected(true);Tarde6.setSelected(true);
+                    Noite.setSelected(true);Noite1.setSelected(true);Noite2.setSelected(true);
+                    Noite3.setSelected(true);Noite4.setSelected(true);Noite5.setSelected(true);Noite6.setSelected(true);}
+            else{
+                    Manhã.setSelected(false);Manhã1.setSelected(false);Manhã2.setSelected(false);
+                    Manhã3.setSelected(false);Manhã4.setSelected(false);Manhã5.setSelected(false);Manhã6.setSelected(false);
+                    Tarde.setSelected(false);Tarde1.setSelected(false);Tarde2.setSelected(false);
+                    Tarde3.setSelected(false);Tarde4.setSelected(false);Tarde5.setSelected(false);Tarde6.setSelected(false);
+                    Noite.setSelected(false);Noite1.setSelected(false);Noite2.setSelected(false);
+                    Noite3.setSelected(false);Noite4.setSelected(false);Noite5.setSelected(false);Noite6.setSelected(false);
+            }
+    }//GEN-LAST:event_TodosActionPerformed
     
     
     /**
@@ -910,6 +971,12 @@ public class ArrayListGUI extends javax.swing.JFrame {
             Habilidade.setSelectedIndex(0);
             Classe.setSelectedIndex(0);
             NomeJogador.requestFocus();
+            Manhã.setSelected(false);Manhã1.setSelected(false);Manhã2.setSelected(false);
+            Manhã3.setSelected(false);Manhã4.setSelected(false);Manhã5.setSelected(false);Manhã6.setSelected(false);
+            Tarde.setSelected(false);Tarde1.setSelected(false);Tarde2.setSelected(false);
+            Tarde3.setSelected(false);Tarde4.setSelected(false);Tarde5.setSelected(false);Tarde6.setSelected(false);
+            Noite.setSelected(false);Noite1.setSelected(false);Noite2.setSelected(false);
+            Noite3.setSelected(false);Noite4.setSelected(false);Noite5.setSelected(false);Noite6.setSelected(false);
     }
     
     
@@ -947,7 +1014,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JTextField NomeJogador;
     private javax.swing.JTextField NomePersonagem;
     private javax.swing.JComboBox Raça;
-    private javax.swing.JButton RemoveGrupo;
+    private javax.swing.JButton RemovedoGrupo;
     private javax.swing.JButton Salvar;
     private javax.swing.JButton SalvarGrupo;
     private javax.swing.JCheckBox Tarde;
@@ -957,8 +1024,9 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox Tarde4;
     private javax.swing.JCheckBox Tarde5;
     private javax.swing.JCheckBox Tarde6;
+    private javax.swing.JCheckBox Todos;
     private javax.swing.JButton abregrupo;
-    private javax.swing.JButton abregrupo1;
+    private javax.swing.JButton excluegrupo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

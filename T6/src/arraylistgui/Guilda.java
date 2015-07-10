@@ -20,19 +20,18 @@ public class Guilda{
         public void adicionar(Personagem p){
                     guilda.add(p);
 }
+        
         public void remover (int i){
                     guilda.remove(i); 
+        }
+        public void trocar (int i, Personagem p){
+                    remover(i);
+                    guilda.add(i, p);
         }
         public ArrayList<Personagem> conteudo (){
                     return this.guilda;
         }
         public Personagem getelemento(int i){
                     return guilda.get(i);
-        }
-        public void printar_guilda(){
-                    for (int i=0; i<guilda.size();i++){
-                            Personagem p = guilda.get(i);
-                            System.out.println(p.toString());                                    
-                    }
         }
 }

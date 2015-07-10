@@ -106,13 +106,6 @@ public class Personagem {
             }
             return aux;
        }
-    public void diastrabalho(){
-            int i, j;
-            for (i=0;i<7;i++)
-                for(j=0;j<3;j++)
-                        if (trabalho[i][j])
-                            System.out.println("Trabalha!!\n");
-    }
     
     public String nomep,nomej, raça,classe,especialidade,habilidade;
     public int levelh,levelp;

@@ -22,12 +22,10 @@ public class Controle {
     ArrayListGUI view;
     Guilda guilda;
     ArrayList<Grupo> grupo;
-    TableModelPersonagem table;
     public Controle (ArrayListGUI view){
             this.view = view;
             this.guilda = new Guilda();
             this.grupo = new ArrayList<Grupo>();
-            this.table = new TableModelPersonagem();
     }
         
     public void salvar (Personagem p){ 
@@ -36,12 +34,14 @@ public class Controle {
     public void apagar(int indice){
             guilda.remover(indice);
     }
+    public void trocar (int i, Personagem p){
+            guilda.trocar(i, p);
+    }
    public Personagem getelemento(int i){
             return guilda.getelemento(i);
    }
-   public void printar (int i){
-            System.out.println("Lista de elementos no grupo!!!\n");
-            grupo.get(i).printar_guilda();
+   public void atualizapersonagem(int i, int j, int indice){
+            guilda.getelemento(indice).trabalho[i][j] = false;
    }
     
 }

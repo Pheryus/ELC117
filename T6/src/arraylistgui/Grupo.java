@@ -22,18 +22,8 @@ public class Grupo {
         public void remover (int i){
                     grupo.remove(i); 
         }
-        
-        public ArrayList<Personagem> conteudo (){
-                    return this.grupo;
-        }
         public Personagem getelemento(int i){
                     return grupo.get(i);
-        }
-        public void printar_guilda(){
-                    for (int i=0; i<grupo.size();i++){
-                            Personagem p = grupo.get(i);
-                            System.out.println(p.toString());                                    
-                    }
         }
         public void deletar(){
                     grupo.clear();

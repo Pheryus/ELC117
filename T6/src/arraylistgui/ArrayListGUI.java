@@ -22,7 +22,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ArrayListGUI extends javax.swing.JFrame {
 
-    private TableModelPersonagem tableModelPersonagem;
     Controle c;
     Grupo auxiliar;
     /** Creates new form ArrayListGUI */
@@ -34,6 +33,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         
     }
 
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -44,24 +44,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        AdicionaGrupo = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        SalvarGrupo = new javax.swing.JButton();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
-        Apagar = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        tablegrupo = new javax.swing.JTable();
-        nomegrupo = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        RemovedoGrupo = new javax.swing.JButton();
-        limpagrupo = new javax.swing.JButton();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        tablegrupopronto = new javax.swing.JTable();
-        excluegrupo = new javax.swing.JButton();
-        abregrupo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         NomeJogador = new javax.swing.JTextField();
@@ -111,212 +93,52 @@ public class ArrayListGUI extends javax.swing.JFrame {
         Noite5 = new javax.swing.JCheckBox();
         Noite6 = new javax.swing.JCheckBox();
         Todos = new javax.swing.JCheckBox();
+        EditarPersonagem = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        AdicionaGrupo = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        SalvarGrupo = new javax.swing.JButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        Apagar = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        tablegrupo = new javax.swing.JTable();
+        nomegrupo = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        RemovedoGrupo = new javax.swing.JButton();
+        limpagrupo = new javax.swing.JButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tablegrupopronto = new javax.swing.JTable();
+        excluigrupo = new javax.swing.JButton();
+        abregrupo = new javax.swing.JButton();
+        DiaGrupo = new javax.swing.JComboBox();
+        AtualizarPersonagem = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        tablegrupopronto1 = new javax.swing.JTable();
+        jLabel20 = new javax.swing.JLabel();
+        jNomeEvento = new javax.swing.JTextField();
+        ComeçoEvento = new javax.swing.JComboBox();
+        FimEvento = new javax.swing.JComboBox();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        tablegrupopronto2 = new javax.swing.JTable();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        ComeçoEvento1 = new javax.swing.JComboBox();
+        nDefensor = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        ComeçoEvento2 = new javax.swing.JComboBox();
+        nAgressor = new javax.swing.JTextField();
+        ComeçoEvento3 = new javax.swing.JComboBox();
+        ComeçoEvento4 = new javax.swing.JComboBox();
+        nControlador = new javax.swing.JTextField();
+        nLíder = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        AdicionaGrupo.setText("Adicionar ao Grupo");
-        AdicionaGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdicionaGrupoActionPerformed(evt);
-            }
-        });
-
-        jLabel18.setText("Montar Grupo");
-
-        jLabel19.setText("Personagens - Guild");
-
-        SalvarGrupo.setText("Salvar Grupo");
-        SalvarGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalvarGrupoActionPerformed(evt);
-            }
-        });
-
-        table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome do Jogador", "Nome do Personagem", "Level", "Classe", "Raça", "Habilidade", "LevelHab", "Especialidade", "Disponível"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table.getTableHeader().setReorderingAllowed(false);
-        jScrollPane11.setViewportView(table);
-
-        Apagar.setText("Apagar Personagem");
-        Apagar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ApagarActionPerformed(evt);
-            }
-        });
-
-        tablegrupo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome do Jogador", "Nome do Personagem", "Level", "Classe", "Raça", "Habilidade", "LevelHab", "Especialidade", "Disponível"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablegrupo.getTableHeader().setReorderingAllowed(false);
-        jScrollPane10.setViewportView(tablegrupo);
-        if (tablegrupo.getColumnModel().getColumnCount() > 0) {
-            tablegrupo.getColumnModel().getColumn(1).setHeaderValue("Nome do Personagem");
-            tablegrupo.getColumnModel().getColumn(2).setHeaderValue("Level");
-            tablegrupo.getColumnModel().getColumn(3).setHeaderValue("Classe");
-            tablegrupo.getColumnModel().getColumn(4).setHeaderValue("Raça");
-            tablegrupo.getColumnModel().getColumn(5).setHeaderValue("Habilidade");
-            tablegrupo.getColumnModel().getColumn(7).setHeaderValue("Especialidade");
-            tablegrupo.getColumnModel().getColumn(8).setHeaderValue("Disponível");
-        }
-
-        jLabel17.setText("Nome Grupo");
-
-        RemovedoGrupo.setText("Remover do Grupo");
-        RemovedoGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemovedoGrupoActionPerformed(evt);
-            }
-        });
-
-        limpagrupo.setText("Limpar Grupo");
-        limpagrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limpagrupoActionPerformed(evt);
-            }
-        });
-
-        tablegrupopronto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome do Grupo", "Tamanho"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablegrupopronto.getTableHeader().setReorderingAllowed(false);
-        jScrollPane12.setViewportView(tablegrupopronto);
-
-        excluegrupo.setText("Excluir Grupo");
-        excluegrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluegrupoActionPerformed(evt);
-            }
-        });
-
-        abregrupo.setText("Abrir Grupo");
-        abregrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abregrupoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane10)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(401, 401, 401)
-                .addComponent(jLabel19)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel18)
-                .addGap(148, 148, 148)
-                .addComponent(Apagar)
-                .addGap(185, 185, 185))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SalvarGrupo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(limpagrupo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                        .addComponent(AdicionaGrupo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RemovedoGrupo)
-                        .addGap(176, 176, 176))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(excluegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(301, 301, 301)
-                    .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(445, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AdicionaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RemovedoGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SalvarGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nomegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
-                            .addComponent(limpagrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(56, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(excluegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(458, Short.MAX_VALUE)
-                    .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(112, 112, 112)))
-        );
-
-        jTabbedPane2.addTab("Guild", jPanel1);
 
         jLabel2.setText("Nome do Jogador:");
 
@@ -346,7 +168,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         jLabel7.setText("Habilidade");
 
-        Habilidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Adestrar Animais", "Acrobacia", "Furtividade", "HIstória", "Religião", "Percepção", "Blefe", "Identificar Magia" }));
+        Habilidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Adestrar Animais", "Acrobacia", "Furtividade", "História", "Religião", "Percepção", "Blefe", "Identificar Magia" }));
 
         jLabel8.setText("Level");
 
@@ -514,6 +336,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
             }
         });
 
+        EditarPersonagem.setText("Editar");
+        EditarPersonagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarPersonagemActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -553,65 +382,64 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addComponent(NomeJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(13, 13, 13))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(13, 13, 13))
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Manhã2)
-                                    .addComponent(Manhã1)
-                                    .addComponent(Manhã3)
-                                    .addComponent(Manhã4)
-                                    .addComponent(Manhã5)
-                                    .addComponent(Manhã6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Tarde1)
-                                    .addComponent(Tarde2)
-                                    .addComponent(Tarde3)
-                                    .addComponent(Tarde4)
-                                    .addComponent(Tarde5)
-                                    .addComponent(Tarde6)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Manhã)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Tarde)))
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Noite)
-                            .addComponent(Noite3)
-                            .addComponent(Noite4)
-                            .addComponent(Noite5)
-                            .addComponent(Noite6)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(Noite1)
-                                        .addGap(214, 214, 214))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(Noite2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(Salvar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addComponent(Limpar))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(284, 284, 284)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Manhã2)
+                            .addComponent(Manhã1)
+                            .addComponent(Manhã3)
+                            .addComponent(Manhã4)
+                            .addComponent(Manhã5)
+                            .addComponent(Manhã6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Todos)))
-                .addGap(0, 231, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Tarde1)
+                            .addComponent(Tarde2)
+                            .addComponent(Tarde3)
+                            .addComponent(Tarde4)
+                            .addComponent(Tarde5)
+                            .addComponent(Tarde6)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Manhã)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Tarde)))
+                .addGap(2, 2, 2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Noite)
+                    .addComponent(Noite3)
+                    .addComponent(Noite4)
+                    .addComponent(Noite5)
+                    .addComponent(Noite6)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(Noite1)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(Noite2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                            .addComponent(Salvar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(EditarPersonagem)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Limpar)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(284, 284, 284)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Todos))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -673,7 +501,8 @@ public class ArrayListGUI extends javax.swing.JFrame {
                     .addComponent(Tarde2)
                     .addComponent(Noite2)
                     .addComponent(Limpar)
-                    .addComponent(Salvar))
+                    .addComponent(Salvar)
+                    .addComponent(EditarPersonagem))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Manhã3)
@@ -703,18 +532,437 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Personagem", jPanel2);
 
+        AdicionaGrupo.setText("Adicionar ao Grupo");
+        AdicionaGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdicionaGrupoActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Montar Grupo");
+
+        jLabel19.setText("Personagens - Guild");
+
+        SalvarGrupo.setText("Salvar Grupo");
+        SalvarGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarGrupoActionPerformed(evt);
+            }
+        });
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Jogador", "Nome do Personagem", "Level", "Classe", "Raça", "Habilidade", "LevelHab", "Especialidade", "Disponível"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table.getTableHeader().setReorderingAllowed(false);
+        jScrollPane11.setViewportView(table);
+
+        Apagar.setText("Apagar Personagem");
+        Apagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApagarActionPerformed(evt);
+            }
+        });
+
+        tablegrupo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Jogador", "Nome do Personagem", "Level", "Classe", "Raça", "Habilidade", "LevelHab", "Especialidade", "Disponível"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablegrupo.getTableHeader().setReorderingAllowed(false);
+        jScrollPane10.setViewportView(tablegrupo);
+        if (tablegrupo.getColumnModel().getColumnCount() > 0) {
+            tablegrupo.getColumnModel().getColumn(1).setHeaderValue("Nome do Personagem");
+            tablegrupo.getColumnModel().getColumn(2).setHeaderValue("Level");
+            tablegrupo.getColumnModel().getColumn(3).setHeaderValue("Classe");
+            tablegrupo.getColumnModel().getColumn(4).setHeaderValue("Raça");
+            tablegrupo.getColumnModel().getColumn(5).setHeaderValue("Habilidade");
+            tablegrupo.getColumnModel().getColumn(7).setHeaderValue("Especialidade");
+            tablegrupo.getColumnModel().getColumn(8).setHeaderValue("Disponível");
+        }
+
+        jLabel17.setText("Nome Grupo");
+
+        RemovedoGrupo.setText("Remover do Grupo");
+        RemovedoGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemovedoGrupoActionPerformed(evt);
+            }
+        });
+
+        limpagrupo.setText("Limpar Grupo");
+        limpagrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpagrupoActionPerformed(evt);
+            }
+        });
+
+        tablegrupopronto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Grupo", "Tamanho"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablegrupopronto.getTableHeader().setReorderingAllowed(false);
+        jScrollPane12.setViewportView(tablegrupopronto);
+
+        excluigrupo.setText("Excluir Grupo");
+        excluigrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluigrupoActionPerformed(evt);
+            }
+        });
+
+        abregrupo.setText("Abrir Grupo");
+        abregrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abregrupoActionPerformed(evt);
+            }
+        });
+
+        DiaGrupo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Segunda Manhã", "Segunda Tarde", "Segunda Noite", "Terça Manhã", "Terça Tarde", "Terça Noite", "Quarta Manhã", "Quarta Tarde", "Quarta Noite", "Quinta Manhã", "Quinta Tarde", "Quinta Noite", "Sexta Manhã", "Sexta Tarde", "Sexta Noite", "Sábado Manhã", "Sábado Tarde", "Sábado Noite", "Domingo Manhã", "Domingo Tarde", "Domingo Noite" }));
+        DiaGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiaGrupoActionPerformed(evt);
+            }
+        });
+
+        AtualizarPersonagem.setText("Pegar Informações do Personagem");
+        AtualizarPersonagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtualizarPersonagemActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane10)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(401, 401, 401)
+                .addComponent(jLabel19)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AtualizarPersonagem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Apagar)
+                .addGap(102, 102, 102))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SalvarGrupo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(limpagrupo)
+                        .addGap(31, 31, 31)
+                        .addComponent(DiaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                        .addComponent(AdicionaGrupo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RemovedoGrupo)
+                        .addGap(93, 93, 93))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(excluigrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(301, 301, 301)
+                    .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(445, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AtualizarPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AdicionaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RemovedoGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SalvarGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nomegrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)
+                            .addComponent(limpagrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DiaGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(excluigrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(458, Short.MAX_VALUE)
+                    .addComponent(abregrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(112, 112, 112)))
+        );
+
+        jTabbedPane2.addTab("Guild", jPanel1);
+
+        tablegrupopronto1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Grupo", "Tamanho"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablegrupopronto1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane13.setViewportView(tablegrupopronto1);
+
+        jLabel20.setText("Nome do Evento");
+
+        ComeçoEvento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Segunda Manhã", "Segunda Tarde", "Segunda Noite", "Terça Manhã", "Terça Tarde", "Terça Noite", "Quarta Manhã", "Quarta Tarde", "Quarta Noite", "Quinta Manhã", "Quinta Tarde", "Quinta Noite", "Sexta Manhã", "Sexta Tarde", "Sexta Noite", "Sábado Manhã", "Sábado Tarde", "Sábado Noite", "Domingo Manhã", "Domingo Tarde", "Domingo Noite" }));
+        ComeçoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComeçoEventoActionPerformed(evt);
+            }
+        });
+
+        FimEvento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Segunda Manhã", "Segunda Tarde", "Segunda Noite", "Terça Manhã", "Terça Tarde", "Terça Noite", "Quarta Manhã", "Quarta Tarde", "Quarta Noite", "Quinta Manhã", "Quinta Tarde", "Quinta Noite", "Sexta Manhã", "Sexta Tarde", "Sexta Noite", "Sábado Manhã", "Sábado Tarde", "Sábado Noite", "Domingo Manhã", "Domingo Tarde", "Domingo Noite" }));
+        FimEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FimEventoActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Começo");
+
+        jLabel22.setText("Término");
+
+        tablegrupopronto2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Grupo", "Tamanho"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablegrupopronto2.getTableHeader().setReorderingAllowed(false);
+        jScrollPane14.setViewportView(tablegrupopronto2);
+
+        jLabel23.setText("Grupos");
+
+        jLabel24.setText("Eventos");
+
+        jLabel25.setText("-Pré-Requisitos-");
+
+        ComeçoEvento1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Defensor" }));
+        ComeçoEvento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComeçoEvento1ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("      Número");
+
+        ComeçoEvento2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Agressor" }));
+        ComeçoEvento2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComeçoEvento2ActionPerformed(evt);
+            }
+        });
+
+        ComeçoEvento3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Controlador" }));
+        ComeçoEvento3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComeçoEvento3ActionPerformed(evt);
+            }
+        });
+
+        ComeçoEvento4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nenhum", "Líder" }));
+        ComeçoEvento4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComeçoEvento4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(324, 324, 324)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jNomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FimEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ComeçoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(74, 74, 74)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(ComeçoEvento1, 0, 82, Short.MAX_VALUE)
+                                        .addComponent(ComeçoEvento2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(ComeçoEvento4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ComeçoEvento3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nControlador, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nAgressor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nDefensor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26)
+                                    .addComponent(nLíder, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel23))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel24)))
+                .addContainerGap(152, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(49, 49, 49)
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(610, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jNomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComeçoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(ComeçoEvento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nDefensor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FimEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(ComeçoEvento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nAgressor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComeçoEvento3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nControlador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComeçoEvento4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nLíder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(35, 35, 35)
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(342, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane2.addTab("Eventos", jPanel3);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addGap(0, 234, Short.MAX_VALUE))
         );
 
         pack();
@@ -725,49 +973,15 @@ public class ArrayListGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_NomePersonagemActionPerformed
 
     private void EspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspecialidadeActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:     
     }//GEN-LAST:event_EspecialidadeActionPerformed
 
     private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
         // TODO add your handling code here:
         try {
-            //teste se n selecionou nada
-        
-            if (!Manhã.isSelected()&&!Manhã1.isSelected()&&!Manhã2.isSelected()&&!Manhã3.isSelected()&&
-                    !Manhã4.isSelected()&&!Manhã5.isSelected()&&!Manhã6.isSelected()&&!Tarde.isSelected()&&!Tarde1.isSelected()&&!Tarde2.isSelected()
-                    &&!Tarde3.isSelected()&&!Tarde4.isSelected()&&!Tarde5.isSelected()&&!Tarde6.isSelected()&&!Noite.isSelected()&&!Noite1.isSelected()&&!Noite2.isSelected()&&!Noite3.isSelected()&&!Noite4.isSelected()&&!Noite5.isSelected()&&!Noite6.isSelected())
-                return;
-            Personagem p = new Personagem();
-            p.setNomej(NomeJogador.getText().trim());
-            p.setNomep(NomePersonagem.getText().trim());
-            p.setLevelP(Integer.parseInt(LevelP.getText().trim()));
-            p.setClasse((String)Classe.getSelectedItem());
-            p.setRaça((String)Raça.getSelectedItem());
-            p.setHabilidade((String)Habilidade.getSelectedItem());
-            p.setEspecialidade((String)Especialidade.getSelectedItem());
-            p.setLevelH(Integer.parseInt(LevelH.getText().trim()));
-            p.setTrabalho(0,0,Manhã.isSelected());
-            p.setTrabalho(1,0,Manhã1.isSelected());
-            p.setTrabalho(2,0,Manhã2.isSelected());
-            p.setTrabalho(3,0,Manhã3.isSelected());
-            p.setTrabalho(4,0,Manhã4.isSelected());
-            p.setTrabalho(5,0,Manhã5.isSelected());
-            p.setTrabalho(6,0,Manhã6.isSelected());
-            p.setTrabalho(0,1,Tarde.isSelected());
-            p.setTrabalho(1,1,Tarde1.isSelected());
-            p.setTrabalho(2,1,Tarde2.isSelected());
-            p.setTrabalho(3,1,Tarde3.isSelected());
-            p.setTrabalho(4,1,Tarde4.isSelected());
-            p.setTrabalho(5,1,Tarde5.isSelected());
-            p.setTrabalho(6,1,Tarde6.isSelected());
-            p.setTrabalho(0,2,Noite.isSelected());
-            p.setTrabalho(1,2,Noite1.isSelected());
-            p.setTrabalho(2,2,Noite2.isSelected());
-            p.setTrabalho(3,2,Noite3.isSelected());
-            p.setTrabalho(4,2,Noite4.isSelected());
-            p.setTrabalho(5,2,Noite5.isSelected());
-            p.setTrabalho(6,2,Noite6.isSelected());
+            Personagem p = copiadeelementos();
+            if (p == null)
+                    return;
             String trabalho = p.vertrabalho();
             DefaultTableModel val = (DefaultTableModel)table.getModel();
             val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
@@ -795,6 +1009,8 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
     private void AdicionaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionaGrupoActionPerformed
         int i = table.getSelectedRow();
+        if (i== -1)
+                return;
         Personagem p = c.getelemento(i);
         auxiliar.adicionar(p);
         String trabalho = p.vertrabalho();
@@ -857,14 +1073,156 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private void SalvarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarGrupoActionPerformed
         // TODO add your handling code here:
         int tam = tablegrupo.getRowCount();
+        int dia = 0,periodo = 0;
         String palavra;
         Grupo aux = new Grupo();
+        int j;
+        boolean teste = true;
         if (tam == 0)
                 JOptionPane.showMessageDialog(null, "Grupo vazio!","Erro",JOptionPane.WARNING_MESSAGE);
         else if (tam == 5 || tam == 10 || tam == 25){
                 if ((nomegrupo.getText().isEmpty()))
                         JOptionPane.showMessageDialog(null, "Nome inválido","Erro",JOptionPane.WARNING_MESSAGE);
                 else{
+                        if (DiaGrupo.getSelectedItem()=="Segunda Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[0][0];
+                               dia=0;
+                               periodo=0;
+                        }
+                         if (DiaGrupo.getSelectedItem()=="Segunda Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[0][1];
+                               dia=0;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Segunda Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[0][2];
+                               dia=0;
+                               periodo=2;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Terça Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[1][0];
+                               dia=1;
+                               periodo=0;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Terça Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[1][1];
+                               dia=1;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Terça Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[1][2];
+                               dia=1;
+                               periodo=2;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Quarta Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[2][0];
+                               dia=2;
+                               periodo=0;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Quarta Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[2][1];
+                               dia=2;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Quarta Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[2][2];
+                               dia=2;
+                               periodo=2;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Quinta Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[3][0];
+                               dia=3;
+                               periodo=0;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Quinta Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[3][1];
+                               dia=3;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Quinta Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[3][2];
+                               dia=3;
+                               periodo=2;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Sexta Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[4][0];
+                               dia=4;
+                               periodo=0;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Sexta Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[4][1];
+                               dia=4;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Sexta Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[4][2];
+                               dia=4;
+                               periodo=2;
+                         }  
+                         if (DiaGrupo.getSelectedItem()=="Sábado Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[5][0];
+                               dia=5;
+                               periodo=0;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Sábado Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[5][1];
+                               dia=5;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Sábado Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[5][2];
+                               dia=5;
+                               periodo=2;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Domingo Manhã"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[6][0];
+                               dia=6;
+                               periodo=0;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Domingo Tarde"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[6][1];
+                               dia=6;
+                               periodo=1;
+                         }
+                         if (DiaGrupo.getSelectedItem()=="Domingo Noite"){
+                               for (int i=0; i<tam;i++)
+                                        teste = teste && auxiliar.grupo.get(i).trabalho[6][2];  
+                               dia=6;
+                               periodo=2;
+                         }
+                         if (!teste){
+                                        JOptionPane.showMessageDialog(null, "Nem todas personagens podem nesse dia!","Erro",JOptionPane.WARNING_MESSAGE);   
+                                        return;
+                         }
+                         DefaultTableModel mod = (DefaultTableModel)table.getModel();
+                         for (int i=0; i<tam;i++){
+                             j = c.guilda.guilda.indexOf(auxiliar.grupo.get(i));
+                             c.atualizapersonagem(dia, periodo, j);
+                             Personagem p = c.guilda.getelemento(j);
+                             mod.removeRow(j);
+                             mod.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,p.vertrabalho()});
+                         }
+
                         for (int i=0; i<tam;i++)
                                 aux.adicionar(auxiliar.getelemento(i));
                         palavra = nomegrupo.getText();
@@ -877,7 +1235,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
                 }   
         }
         else
-                JOptionPane.showMessageDialog(null, "Número de pessoas inválido (5, 10 ou 15)","Erro",JOptionPane.WARNING_MESSAGE);   
+                JOptionPane.showMessageDialog(null, "Número de pessoas inválido (5, 10 ou 25)","Erro",JOptionPane.WARNING_MESSAGE);   
     }//GEN-LAST:event_SalvarGrupoActionPerformed
 
     private void ApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApagarActionPerformed
@@ -886,7 +1244,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         if (table.getSelectedRow() == -1)
                 return;
         c.apagar(table.getSelectedRow());
-        auxiliar.remover(table.getSelectedRow());
+        //auxiliar.remover(table.getSelectedRow());
         ((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
     }//GEN-LAST:event_ApagarActionPerformed
 
@@ -911,7 +1269,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_limpagrupoActionPerformed
 
-    private void excluegrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluegrupoActionPerformed
+    private void excluigrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluigrupoActionPerformed
         // TODO add your handling code here:
         //DefaultTableModel val = (DefaultTableModel)tablegrupopronto.getModel();
         //c.grupo.get(tablegrupopronto.getSelectedRow()).deletar();
@@ -921,7 +1279,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         c.grupo.remove(i);
         ((DefaultTableModel) tablegrupopronto.getModel()).removeRow(i);
         
-    }//GEN-LAST:event_excluegrupoActionPerformed
+    }//GEN-LAST:event_excluigrupoActionPerformed
 
     private void abregrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abregrupoActionPerformed
         // TODO add your handling code here:
@@ -956,6 +1314,91 @@ public class ArrayListGUI extends javax.swing.JFrame {
                     Noite3.setSelected(false);Noite4.setSelected(false);Noite5.setSelected(false);Noite6.setSelected(false);
             }
     }//GEN-LAST:event_TodosActionPerformed
+
+    private void DiaGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaGrupoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiaGrupoActionPerformed
+
+    private void AtualizarPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarPersonagemActionPerformed
+        // TODO add your handling code here:
+        int i = table.getSelectedRow();
+        if (i == -1)
+                return;
+        Personagem p = c.guilda.getelemento(i);
+        NomeJogador.setText(p.nomej);
+        NomePersonagem.setText(p.nomep);
+        Raça.setSelectedItem(p.raça);
+        Classe.setSelectedItem(p.classe);
+        Habilidade.setSelectedItem(p.habilidade);
+        Especialidade.setSelectedItem(p.especialidade);
+        LevelP.setText(Integer.toString(p.levelp));
+        LevelH.setText(Integer.toString(p.levelh));
+        if (p.trabalho[0][0])   Manhã.setSelected(true);
+        if (p.trabalho[1][0])   Manhã1.setSelected(true);
+        if (p.trabalho[2][0])   Manhã2.setSelected(true);
+        if (p.trabalho[3][0])   Manhã3.setSelected(true);
+        if (p.trabalho[4][0])   Manhã4.setSelected(true);
+        if (p.trabalho[5][0])   Manhã5.setSelected(true);
+        if (p.trabalho[6][0])   Manhã6.setSelected(true);
+        if (p.trabalho[0][1])   Tarde.setSelected(true);
+        if (p.trabalho[1][1])   Tarde1.setSelected(true);
+        if (p.trabalho[2][1])   Tarde2.setSelected(true);
+        if (p.trabalho[3][1])   Tarde3.setSelected(true);
+        if (p.trabalho[4][1])   Tarde4.setSelected(true);
+        if (p.trabalho[5][1])   Tarde5.setSelected(true);
+        if (p.trabalho[6][1])   Tarde6.setSelected(true);
+        if (p.trabalho[0][2])   Noite.setSelected(true);
+        if (p.trabalho[1][2])   Noite1.setSelected(true);
+        if (p.trabalho[2][2])   Noite2.setSelected(true);
+        if (p.trabalho[3][2])   Noite3.setSelected(true);
+        if (p.trabalho[4][2])   Noite4.setSelected(true);
+        if (p.trabalho[5][2])   Noite5.setSelected(true);
+        if (p.trabalho[6][2])   Noite6.setSelected(true);
+    }//GEN-LAST:event_AtualizarPersonagemActionPerformed
+
+    private void EditarPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPersonagemActionPerformed
+        // TODO add your handling code here:
+          try {
+            //teste se n selecionou nada
+            Personagem p = copiadeelementos();
+            if (p == null)
+                    return;
+            String trabalho = p.vertrabalho();
+            limpar();
+            int i = table.getSelectedRow();
+            c.trocar(i, p);
+            DefaultTableModel val = (DefaultTableModel)table.getModel();
+            val.removeRow(i);
+            val.addRow(new String[]{p.nomej,p.nomep,Integer.toString(p.levelp),p.classe,p.raça,p.habilidade,Integer.toString(p.levelh),p.especialidade,trabalho});
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Não conseguiu editar!");
+        }
+    }//GEN-LAST:event_EditarPersonagemActionPerformed
+
+    private void ComeçoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComeçoEventoActionPerformed
+
+    private void FimEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FimEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FimEventoActionPerformed
+
+    private void ComeçoEvento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComeçoEvento1ActionPerformed
+
+    private void ComeçoEvento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComeçoEvento2ActionPerformed
+
+    private void ComeçoEvento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComeçoEvento3ActionPerformed
+
+    private void ComeçoEvento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComeçoEvento4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComeçoEvento4ActionPerformed
     
     
     /**
@@ -977,8 +1420,46 @@ public class ArrayListGUI extends javax.swing.JFrame {
             Tarde3.setSelected(false);Tarde4.setSelected(false);Tarde5.setSelected(false);Tarde6.setSelected(false);
             Noite.setSelected(false);Noite1.setSelected(false);Noite2.setSelected(false);
             Noite3.setSelected(false);Noite4.setSelected(false);Noite5.setSelected(false);Noite6.setSelected(false);
+            Todos.setSelected(false);
     }
     
+    public Personagem copiadeelementos(){
+        if (!Manhã.isSelected()&&!Manhã1.isSelected()&&!Manhã2.isSelected()&&!Manhã3.isSelected()&&
+                    !Manhã4.isSelected()&&!Manhã5.isSelected()&&!Manhã6.isSelected()&&!Tarde.isSelected()&&!Tarde1.isSelected()&&!Tarde2.isSelected()
+                    &&!Tarde3.isSelected()&&!Tarde4.isSelected()&&!Tarde5.isSelected()&&!Tarde6.isSelected()&&!Noite.isSelected()&&!Noite1.isSelected()&&!Noite2.isSelected()&&!Noite3.isSelected()&&!Noite4.isSelected()&&!Noite5.isSelected()&&!Noite6.isSelected())
+                return null;
+            Personagem p = new Personagem();
+            p.setNomej(NomeJogador.getText().trim());
+            p.setNomep(NomePersonagem.getText().trim());
+            p.setLevelP(Integer.parseInt(LevelP.getText().trim()));
+            p.setClasse((String)Classe.getSelectedItem());
+            p.setRaça((String)Raça.getSelectedItem());
+            p.setHabilidade((String)Habilidade.getSelectedItem());
+            p.setEspecialidade((String)Especialidade.getSelectedItem());
+            p.setLevelH(Integer.parseInt(LevelH.getText().trim()));
+            p.setTrabalho(0,0,Manhã.isSelected());
+            p.setTrabalho(1,0,Manhã1.isSelected());
+            p.setTrabalho(2,0,Manhã2.isSelected());
+            p.setTrabalho(3,0,Manhã3.isSelected());
+            p.setTrabalho(4,0,Manhã4.isSelected());
+            p.setTrabalho(5,0,Manhã5.isSelected());
+            p.setTrabalho(6,0,Manhã6.isSelected());
+            p.setTrabalho(0,1,Tarde.isSelected());
+            p.setTrabalho(1,1,Tarde1.isSelected());
+            p.setTrabalho(2,1,Tarde2.isSelected());
+            p.setTrabalho(3,1,Tarde3.isSelected());
+            p.setTrabalho(4,1,Tarde4.isSelected());
+            p.setTrabalho(5,1,Tarde5.isSelected());
+            p.setTrabalho(6,1,Tarde6.isSelected());
+            p.setTrabalho(0,2,Noite.isSelected());
+            p.setTrabalho(1,2,Noite1.isSelected());
+            p.setTrabalho(2,2,Noite2.isSelected());
+            p.setTrabalho(3,2,Noite3.isSelected());
+            p.setTrabalho(4,2,Noite4.isSelected());
+            p.setTrabalho(5,2,Noite5.isSelected());
+            p.setTrabalho(6,2,Noite6.isSelected());
+            return p;
+    }
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -991,8 +1472,17 @@ public class ArrayListGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdicionaGrupo;
     private javax.swing.JButton Apagar;
+    private javax.swing.JButton AtualizarPersonagem;
     private javax.swing.JComboBox Classe;
+    private javax.swing.JComboBox ComeçoEvento;
+    private javax.swing.JComboBox ComeçoEvento1;
+    private javax.swing.JComboBox ComeçoEvento2;
+    private javax.swing.JComboBox ComeçoEvento3;
+    private javax.swing.JComboBox ComeçoEvento4;
+    private javax.swing.JComboBox DiaGrupo;
+    private javax.swing.JButton EditarPersonagem;
     private javax.swing.JComboBox Especialidade;
+    private javax.swing.JComboBox FimEvento;
     private javax.swing.JComboBox Habilidade;
     private javax.swing.JFormattedTextField LevelH;
     private javax.swing.JFormattedTextField LevelP;
@@ -1026,7 +1516,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox Tarde6;
     private javax.swing.JCheckBox Todos;
     private javax.swing.JButton abregrupo;
-    private javax.swing.JButton excluegrupo;
+    private javax.swing.JButton excluigrupo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1039,6 +1529,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1046,17 +1543,27 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jNomeEvento;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JButton limpagrupo;
+    private javax.swing.JTextField nAgressor;
+    private javax.swing.JTextField nControlador;
+    private javax.swing.JTextField nDefensor;
+    private javax.swing.JTextField nLíder;
     private javax.swing.JTextField nomegrupo;
     private javax.swing.JTable table;
     private javax.swing.JTable tablegrupo;
     private javax.swing.JTable tablegrupopronto;
+    private javax.swing.JTable tablegrupopronto1;
+    private javax.swing.JTable tablegrupopronto2;
     // End of variables declaration//GEN-END:variables
 
 }
